@@ -6,6 +6,6 @@ Plan:
 5. Install additional deps
 6. Health check cluster
 7. Setup ingress controller
-8. Setup promotheus
+8. Setup prometheus - https://prometheus.io/
 9. Install all pods
 10. Health check on apps
