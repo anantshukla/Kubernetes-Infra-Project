@@ -31,7 +31,7 @@ jobs:
     - name: Terraform Init
       run: terraform init
       env:
-        GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }}
+        GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
       
     - name: Terraform Format
       run: terraform fmt -check
@@ -39,10 +39,10 @@ jobs:
     - name: Terraform Plan
       run: terraform plan -input=false
       env:
-        GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }}
+        GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
 
     - name: Terraform Apply
       if: github.ref == 'refs/heads/"main"' && github.event_name == 'push'
       run: terraform apply -auto-approve -input=false
       env:
-        GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }}
+        GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}

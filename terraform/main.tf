@@ -6,6 +6,6 @@ terraform {
 }
 
 provider "google" {
-  project = "k8s-playfield"
-  region = "us-west1"
+  project     = "k8s-playfield"
+  region      = "us-west1"
 }
