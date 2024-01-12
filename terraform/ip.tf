@@ -5,5 +5,5 @@ resource "google_compute_global_address" "k8s-advertised-ip" {
   description  = "k8s-advertised-ip"
   project      = "k8s-playfield"
   address_type = "EXTERNAL"
-  ip_version   = "IPV6"
+  ip_version   = "IPV4"
 }
