@@ -2,7 +2,7 @@ locals {
   vm_count = 3
 }
 
-resource "google_compute_instance" "k8s_coordinator" {
+resource "google_compute_instance" "k8s-workers" {
   count = local.vm_count
 
   boot_disk {
@@ -14,7 +14,7 @@ resource "google_compute_instance" "k8s_coordinator" {
     }
   }
 
-  name         = "k8s-coordinator-${count.index + 1}"
+  name         = "k8s-worker-${count.index + 1}"
   machine_type = "n1-standard-2"
   zone         = "us-west1-c"
   project      = "k8s-playfield"
