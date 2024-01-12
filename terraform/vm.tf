@@ -16,10 +16,7 @@ resource "google_compute_instance" "k8s_coordinator" {
   network_interface {
     network    = "k8s-network"
     subnetwork = "projects/k8s-playfield/regions/us-west1/subnetworks/nodes-us-west1"
-    access_config {
-      network_tier = "PREMIUM"
-      nat_ip       = "10.240.0.21"
-    }
+    network_ip = "10.240.0.21"
   }
 
   tags = ["k8s-network", "k8s-coordinator"]
