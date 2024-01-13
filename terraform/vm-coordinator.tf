@@ -17,6 +17,7 @@ resource "google_compute_instance" "k8s_coordinator" {
     network    = "k8s-network"
     subnetwork = "projects/k8s-playfield/regions/us-west1/subnetworks/nodes-us-west1"
     network_ip = "10.240.0.21"
+    access_config {}
   }
 
   tags = ["k8s-network", "k8s-coordinator"]
